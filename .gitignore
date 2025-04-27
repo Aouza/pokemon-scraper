@@ -32,5 +32,10 @@ yarn-error.log*
 *.sln
 *.sw?
 
+# Package manager
+yarn.lock
+package-lock.json
+
+# Debug files
 precos.csv
 debug_*.html 
