@@ -1,0 +1,15 @@
+{
+  "name": "pokemon-card-scraper",
+  "version": "1.0.0",
+  "description": "Script to scrape Pokemon card prices from Liga Pokemon",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-writer": "^1.6.0",
+    "puppeteer": "^24.7.2"
+  }
+}

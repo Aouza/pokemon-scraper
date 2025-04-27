@@ -1,0 +1,4 @@
+node_modules/
+precos.csv
+debug_*.html
+.DS_Store 
