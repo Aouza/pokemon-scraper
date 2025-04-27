@@ -1,45 +1,61 @@
-# Pokemon Card Price Scraper
+# Pokémon Card Price Checker
 
-Um script Node.js para coletar preços de cards Pokemon do site Liga Pokemon.
+Uma aplicação web para verificar preços de cards Pokémon na Liga Pokémon.
 
 ## Funcionalidades
 
-- Coleta preços (mínimo, médio e máximo) de cards Pokemon
-- Salva os dados em um arquivo CSV
-- Suporta múltiplos códigos de cards
+- Busca de preços de cards Pokémon por código
+- Exibição de preços mínimo, médio e máximo
+- Interface responsiva e moderna
+- Design inspirado nas cores oficiais do Pokémon
 
-## Requisitos
+## Tecnologias Utilizadas
 
-- Node.js
-- NPM
+- Frontend: React, TypeScript, Tailwind CSS
+- Backend: Node.js, Express
+- Web Scraping: Puppeteer
 
-## Instalação
+## Como Executar
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/Aouza/pokemon-scraper.git
-```
-
-2. Instale as dependências:
+1. Clone o repositório
+2. Instale as dependências do backend:
 ```bash
 npm install
 ```
 
-## Uso
-
-1. Adicione os códigos dos cards no arquivo `cards.txt` (um código por linha)
-2. Execute o script:
+3. Instale as dependências do frontend:
 ```bash
-npm start
+cd frontend
+npm install
 ```
 
-3. Os resultados serão salvos no arquivo `precos.csv`
+4. Inicie o servidor backend:
+```bash
+node server.js
+```
+
+5. Em outro terminal, inicie o frontend:
+```bash
+cd frontend
+npm run dev
+```
+
+6. Acesse a aplicação em `http://localhost:5173`
 
 ## Estrutura do Projeto
 
-- `index.js` - Script principal
-- `cards.txt` - Arquivo com os códigos dos cards
-- `precos.csv` - Arquivo de saída com os preços coletados
+```
+pokemon/
+├── frontend/           # Aplicação React
+│   ├── src/
+│   │   ├── components/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── public/
+│   └── package.json
+├── server.js          # Servidor Express
+└── package.json
+```
 
 ## Contribuição
 
