@@ -9,21 +9,85 @@
 }
 
 @layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pokemon-blue focus:border-transparent transition-colors duration-200;
   }
-  
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
   .btn-primary {
-    @apply bg-pokemon-blue text-white hover:bg-pokemon-blue/90;
+    @apply bg-pokemon-blue text-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-700 hover:bg-gray-200;
   }
   
   .card {
     @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow;
   }
 
-  .input {
-    @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pokemon-blue focus:border-transparent;
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@layer utilities {
+  .text-pokemon-blue {
+    color: var(--pokemon-blue);
+  }
+
+  .bg-pokemon-blue {
+    background-color: var(--pokemon-blue);
+  }
+
+  .border-pokemon-blue {
+    border-color: var(--pokemon-blue);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
 
 :root {
@@ -52,8 +116,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }

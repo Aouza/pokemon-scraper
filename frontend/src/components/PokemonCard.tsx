@@ -1,51 +1,59 @@
-import { ArrowTrendingUpIcon, ArrowTrendingDownIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
+import { CurrencyDollarIcon, ArrowTrendingUpIcon, ArrowTrendingDownIcon } from '@heroicons/react/24/outline'
 
 interface PokemonCardProps {
-  code: string;
-  name: string;
-  minPrice: string;
-  mediumPrice: string;
-  maxPrice: string;
+  code: string
+  name: string
+  minPrice: string
+  mediumPrice: string
+  maxPrice: string
 }
 
 export function PokemonCard({ code, name, minPrice, mediumPrice, maxPrice }: PokemonCardProps) {
   return (
-    <div className="card group hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br from-pokemon-blue/5 to-pokemon-red/5">
-      <div className="mb-6">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-full bg-pokemon-blue/10 flex items-center justify-center">
-            <CurrencyDollarIcon className="w-5 h-5 text-pokemon-blue" />
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 hover:shadow-md transition-shadow duration-200">
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+            <p className="text-sm text-gray-500">Código: {code}</p>
           </div>
-          <h3 className="text-xl font-bold text-pokemon-blue group-hover:text-pokemon-blue/80 transition-colors">{name}</h3>
         </div>
-        <p className="text-sm text-gray-500 ml-13">Código: {code}</p>
-      </div>
-      
-      <div className="space-y-4">
-        <div className="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-3">
-            <ArrowTrendingDownIcon className="w-5 h-5 text-pokemon-blue" />
-            <span className="text-gray-600">Preço Mínimo</span>
+
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <ArrowTrendingDownIcon className="h-5 w-5 text-green-600" />
+              <span className="text-sm text-green-700 font-semibold">Preço Mínimo</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <CurrencyDollarIcon className="h-4 w-4 text-green-600" />
+              <span className="text-sm font-bold text-green-700">{minPrice}</span>
+            </div>
           </div>
-          <span className="font-bold text-pokemon-blue text-lg">{minPrice}</span>
-        </div>
-        
-        <div className="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-3">
-            <CurrencyDollarIcon className="w-5 h-5 text-pokemon-yellow" />
-            <span className="text-gray-600">Preço Médio</span>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <CurrencyDollarIcon className="h-5 w-5 text-gray-500" />
+              <span className="text-sm text-gray-600">Preço Médio</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <CurrencyDollarIcon className="h-4 w-4 text-gray-500" />
+              <span className="text-sm font-medium text-gray-900">{mediumPrice}</span>
+            </div>
           </div>
-          <span className="font-bold text-pokemon-yellow text-lg">{mediumPrice}</span>
-        </div>
-        
-        <div className="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div className="flex items-center gap-3">
-            <ArrowTrendingUpIcon className="w-5 h-5 text-pokemon-red" />
-            <span className="text-gray-600">Preço Máximo</span>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <ArrowTrendingUpIcon className="h-5 w-5 text-gray-500" />
+              <span className="text-sm text-gray-600">Preço Máximo</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <CurrencyDollarIcon className="h-4 w-4 text-gray-500" />
+              <span className="text-sm font-medium text-gray-900">{maxPrice}</span>
+            </div>
           </div>
-          <span className="font-bold text-pokemon-red text-lg">{maxPrice}</span>
         </div>
       </div>
     </div>
-  );
+  )
 } 
